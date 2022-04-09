@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, *)
 @main
 struct COBSCCOMP202P_001App: App {
     var body: some Scene {

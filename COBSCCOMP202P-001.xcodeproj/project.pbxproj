@@ -14,6 +14,11 @@
 		5F88FBDF27B0FB910071C0CE /* COBSCCOMP202P_001Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88FBDE27B0FB910071C0CE /* COBSCCOMP202P_001Tests.swift */; };
 		5F88FBE927B0FB910071C0CE /* COBSCCOMP202P_001UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88FBE827B0FB910071C0CE /* COBSCCOMP202P_001UITests.swift */; };
 		5F88FBEB27B0FB910071C0CE /* COBSCCOMP202P_001UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F88FBEA27B0FB910071C0CE /* COBSCCOMP202P_001UITestsLaunchTests.swift */; };
+		5F8B027927FF08E500C82138 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8B027827FF08E500C82138 /* SignUpView.swift */; };
+		5F8B027B27FF090300C82138 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8B027A27FF090300C82138 /* SignInView.swift */; };
+		5F8B027D27FF094100C82138 /* SignedInHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8B027C27FF094100C82138 /* SignedInHomeView.swift */; };
+		5F8DF6BC27FF283100E4F58D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8DF6BB27FF283100E4F58D /* Launch Screen.storyboard */; };
+		5FEAD9BA28016852006EDAB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FEAD9B928016852006EDAB7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,7 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5F88FBCA27B0FB570071C0CE /* COBSCCOMP202P-001.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "COBSCCOMP202P-001.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F88FBCA27B0FB570071C0CE /* NIBM Broker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NIBM Broker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F88FBCD27B0FB570071C0CE /* COBSCCOMP202P_001App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COBSCCOMP202P_001App.swift; sourceTree = "<group>"; };
 		5F88FBCF27B0FB570071C0CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5F88FBD127B0FB8E0071C0CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +49,11 @@
 		5F88FBE427B0FB910071C0CE /* COBSCCOMP202P-001UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "COBSCCOMP202P-001UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F88FBE827B0FB910071C0CE /* COBSCCOMP202P_001UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COBSCCOMP202P_001UITests.swift; sourceTree = "<group>"; };
 		5F88FBEA27B0FB910071C0CE /* COBSCCOMP202P_001UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COBSCCOMP202P_001UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5F8B027827FF08E500C82138 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		5F8B027A27FF090300C82138 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		5F8B027C27FF094100C82138 /* SignedInHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInHomeView.swift; sourceTree = "<group>"; };
+		5F8DF6BB27FF283100E4F58D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		5FEAD9B928016852006EDAB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +94,7 @@
 		5F88FBCB27B0FB570071C0CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5F88FBCA27B0FB570071C0CE /* COBSCCOMP202P-001.app */,
+				5F88FBCA27B0FB570071C0CE /* NIBM Broker.app */,
 				5F88FBDA27B0FB910071C0CE /* COBSCCOMP202P-001Tests.xctest */,
 				5F88FBE427B0FB910071C0CE /* COBSCCOMP202P-001UITests.xctest */,
 			);
@@ -94,10 +104,15 @@
 		5F88FBCC27B0FB570071C0CE /* COBSCCOMP202P-001 */ = {
 			isa = PBXGroup;
 			children = (
+				5FEAD9B928016852006EDAB7 /* GoogleService-Info.plist */,
 				5F88FBCD27B0FB570071C0CE /* COBSCCOMP202P_001App.swift */,
 				5F88FBCF27B0FB570071C0CE /* ContentView.swift */,
 				5F88FBD127B0FB8E0071C0CE /* Assets.xcassets */,
 				5F88FBD327B0FB8E0071C0CE /* Preview Content */,
+				5F8B027827FF08E500C82138 /* SignUpView.swift */,
+				5F8B027A27FF090300C82138 /* SignInView.swift */,
+				5F8B027C27FF094100C82138 /* SignedInHomeView.swift */,
+				5F8DF6BB27FF283100E4F58D /* Launch Screen.storyboard */,
 			);
 			path = "COBSCCOMP202P-001";
 			sourceTree = "<group>";
@@ -144,7 +159,7 @@
 			);
 			name = "COBSCCOMP202P-001";
 			productName = "COBSCCOMP202P-001";
-			productReference = 5F88FBCA27B0FB570071C0CE /* COBSCCOMP202P-001.app */;
+			productReference = 5F88FBCA27B0FB570071C0CE /* NIBM Broker.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5F88FBD927B0FB910071C0CE /* COBSCCOMP202P-001Tests */ = {
@@ -215,6 +230,9 @@
 				Base,
 			);
 			mainGroup = 5F88FBC127B0FB550071C0CE;
+			packageReferences = (
+				5FEAD9BB28016B14006EDAB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5F88FBCB27B0FB570071C0CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,6 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F8DF6BC27FF283100E4F58D /* Launch Screen.storyboard in Resources */,
+				5FEAD9BA28016852006EDAB7 /* GoogleService-Info.plist in Resources */,
 				5F88FBD527B0FB8E0071C0CE /* Preview Assets.xcassets in Resources */,
 				5F88FBD227B0FB8E0071C0CE /* Assets.xcassets in Resources */,
 			);
@@ -258,6 +278,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F88FBD027B0FB570071C0CE /* ContentView.swift in Sources */,
+				5F8B027927FF08E500C82138 /* SignUpView.swift in Sources */,
+				5F8B027D27FF094100C82138 /* SignedInHomeView.swift in Sources */,
+				5F8B027B27FF090300C82138 /* SignInView.swift in Sources */,
 				5F88FBCE27B0FB570071C0CE /* COBSCCOMP202P_001App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -401,7 +424,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -425,6 +448,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -433,7 +457,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amanda.COBSCCOMP202P-001";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NIBM Broker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -454,6 +478,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -462,7 +487,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.amanda.COBSCCOMP202P-001";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "NIBM Broker";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -585,6 +610,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5FEAD9BB28016B14006EDAB7 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 5F88FBC227B0FB550071C0CE /* Project object */;
 }
