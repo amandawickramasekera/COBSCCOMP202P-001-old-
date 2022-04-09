@@ -34,7 +34,7 @@ struct SignInView: View {
                 Button("Forgot password") {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
                 }
-            }}
+            }
             }
 }
 
