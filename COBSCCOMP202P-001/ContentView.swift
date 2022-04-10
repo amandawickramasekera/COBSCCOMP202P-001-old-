@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var selectedDistrict = ""
     
     var body: some View {
+        
         VStack{
             Picker(selection: $selectedDistrict,
                 label:

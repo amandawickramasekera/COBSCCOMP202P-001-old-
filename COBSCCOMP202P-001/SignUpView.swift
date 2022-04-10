@@ -11,20 +11,22 @@ struct SignUpView: View {
     
     let gender = ["Male", "Female"]
     
-    @State private var selectedGender = ""
+    @StateObject var userModel = UserModel()
     
+    //@State private var selectedGender = ""
+
     var body: some View {
         VStack{
             Text("Sign up")
             Form{
-                TextField("NIC", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("NIC", text: $userModel.nic)
                 
-                DatePicker(selection: /*@START_MENU_TOKEN@*/.constant(Date())/*@END_MENU_TOKEN@*/, label: { Text("Date of birth") })
+                DatePicker(selection: $userModel.dob, label: { Text("Date of birth") })
                 
-                Picker(selection: $selectedGender,
+                Picker(selection: $userModel.gender,
                     label:
                     HStack {
-                        TextField("Gender",text: $selectedGender)
+                    TextField("Gender",text: $userModel.gender)
                     }
             )
                     {
@@ -34,17 +36,17 @@ struct SignUpView: View {
                     }
                     .pickerStyle(WheelPickerStyle())
         
-                TextField("Name", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Name", text: $userModel.name)
                 
-                TextField("Mobile", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Mobile", text: $userModel.mobile)
                 
-                TextField("Email", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Email", text: $userModel.email)
                 
-                SecureField("Password", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("Apple")/*@END_MENU_TOKEN@*/)
+                SecureField("Password", text: $userModel.password)
                 
-                SecureField("Retype password", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("Apple")/*@END_MENU_TOKEN@*/)
+                SecureField("Retype password", text: $userModel.password)
                 
-                TextField("Current location", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Current location", text: $userModel.currLocation)
                 
                 
                 Button("Sign up") {

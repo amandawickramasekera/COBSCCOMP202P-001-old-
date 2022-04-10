@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct SignInView: View {
-    var body: some View{
+    
+    @StateObject var userModel = UserModel()
+    
+    var body: some View {
         
         VStack{
             Text("Sign in")
             Form{
-                TextField("Username", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Username", text: $userModel.email)
                 
-                SecureField("Password", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("Apple")/*@END_MENU_TOKEN@*/)
+                SecureField("Password", text: $userModel.password)
                 
                 Button("Sign in") {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
