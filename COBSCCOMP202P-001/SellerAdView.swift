@@ -9,8 +9,11 @@ import SwiftUI
 
 struct SellerAdView: View {
     var body: some View {
-        VStack{
-            
+        NavigationView
+        {
+            VStack{
+                
+            }
         }
     }
 }

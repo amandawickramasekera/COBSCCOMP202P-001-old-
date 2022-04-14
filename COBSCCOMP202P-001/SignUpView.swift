@@ -17,6 +17,27 @@ struct SignUpView: View {
     //@State private var selectedGender = ""
 
     var body: some View {
+        
+        NavigationView{
+        
+        ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top), content: {})/*.background(LinearGradient(gradient: init(colors:[Color("top"), Color("bottom")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all))*/.alert( isPresented: $userModel.alert, content: {
+            Alert(title: Text("Message"), message: Text(userModel.alertMsg), dismissButton: .destructive(Text("Ok"), action: {
+                
+                if userModel.alertMsg == "Verification email sent, please verify your email"
+                {
+                    userModel.nic = ""
+                    userModel.dob = Date()
+                    userModel.gender = ""
+                    userModel.name = ""
+                    userModel.mobile = ""
+                    userModel.email_Signup = ""
+                    userModel.password_Signup = ""
+                    userModel.reEnterPassword = ""
+                    userModel.currLocation = ""
+                }
+            }))
+        })
+        
         VStack{
             Text("Sign up")
             Form{
@@ -41,11 +62,11 @@ struct SignUpView: View {
                 
                 TextField("Mobile", text: $userModel.mobile)
                 
-                TextField("Email", text: $userModel.email)
+                TextField("Email", text: $userModel.email_Signup).autocapitalization(.none)
                 
-                SecureField("Password", text: $userModel.password)
+                SecureField("Password", text: $userModel.password_Signup).autocapitalization(.none)
                 
-                SecureField("Retype password", text: $userModel.password)
+                SecureField("Retype password", text: $userModel.reEnterPassword).autocapitalization(.none)
                 
                 TextField("Current location", text: $userModel.currLocation)
                 
@@ -54,6 +75,7 @@ struct SignUpView: View {
                     userModel.signUp()
                 }
             }
+        }
         }
     }
 }

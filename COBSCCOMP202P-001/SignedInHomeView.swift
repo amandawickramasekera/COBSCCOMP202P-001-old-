@@ -13,6 +13,7 @@ struct SignedInHomeView: View {
     @State private var selectedCategory = ""
     
     var body: some View {
+        NavigationView{
         VStack{
             Form{
                 TextField("Min price", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
@@ -44,12 +45,13 @@ struct SignedInHomeView: View {
                     /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
                 }
                 
-                Button("I want to sell") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                }
+                NavigationLink(destination: SellerAdView())
+            {
+                Text("I want to sell")
+            }
             
-            Button("Settings") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+           
+                NavigationLink(destination: SettingsView()) { Text("Settings") }
             }
             
         }

@@ -6,10 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseAuth
 
 struct SettingsView: View {
+
+    @State private var userModel = UserModel()
+    @State private var isActive = false
+    @State private var attemptingLogout = false
+    
     var body: some View {
-        
+        NavigationView{
         VStack{
         Text("NIC")
         Text("DOB")
@@ -17,24 +24,38 @@ struct SettingsView: View {
         Text("Name")
             HStack{
                 Text("Mobile")
-                Button("Change") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                NavigationLink(destination: ChangeMobileView()) {
+                    Text("Change")
                 }
             }
         Text("Email")
-        Button("Change password") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            NavigationLink(destination: ResetPasswordView()) {
+                Text("Change password")
             }
             
             HStack{
         Text("Current location")
-                Button("Change") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                NavigationLink(destination: ChangeLocationView()) {
+                    Text("Change")
                 }
             }
-            Button("Logout") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+            
+            ZStack{
+                NavigationLink(destination: ContentView().navigationBarHidden(true), isActive: $isActive) {
+                    Button("Logout") {
+                        attemptingLogout = true
+                        userModel.logout()
+                        if Auth.auth().currentUser == nil
+                        {
+                            self.isActive = true
+                        }
+                        else{
+                            self.attemptingLogout = false
+                        }
+                    }
+                }
             }
+        }
         }
     }
 }

@@ -14,7 +14,7 @@ struct ContentView: View {
     @State private var selectedDistrict = ""
     
     var body: some View {
-        
+        NavigationView{
         VStack{
             Picker(selection: $selectedDistrict,
                 label:
@@ -33,7 +33,7 @@ struct ContentView: View {
                 /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
             }
         }
-        
+        }
     }
 }
 

@@ -7,39 +7,67 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAuth
 
 struct SignInView: View {
     
     @StateObject var userModel = UserModel()
-    
+    @State private var isActive = false
+    @State private var attemptingLogin = false
     var body: some View {
         
+            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top), content: {})/*.background(LinearGradient(gradient: init(colors:[Color("top"), Color("bottom")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all))*/.alert( isPresented: $userModel.alert, content: {
+                Alert(title: Text("Message"), message: Text(userModel.alertMsg), dismissButton: .destructive(Text("Ok"), action: {
+                    
+                    if Auth.auth().currentUser != nil
+                    {
+                    
+                        userModel.email = ""
+                        userModel.password = ""
+                        
+                        
+                    }
+                }))
+            })
+        NavigationView{
         VStack{
             Text("Sign in")
             Form{
-                TextField("Username", text: $userModel.email)
+                TextField("Username", text: $userModel.email).autocapitalization(.none)
                 
-                SecureField("Password", text: $userModel.password)
+                SecureField("Password", text: $userModel.password).autocapitalization(.none)
                 
-                Button("Sign in") {
-                    userModel.login()
-    
+                ZStack{
+                    NavigationLink(destination: SignedInHomeView().navigationBarHidden(true), isActive: $isActive) {
+                        Button("Sign in") {
+                            attemptingLogin = true
+                            userModel.login()
+                            if Auth.auth().currentUser != nil
+                            {
+                                self.isActive = true
+                            }
+                            else{
+                                self.attemptingLogin = false
+                            }
+                        }
+                    }
                 }
             }
             
-                Button("Terms & policy") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                }
+            NavigationLink(destination: Text("Terms & Policy")) {
+                Text("Terms & Policy")
+            }
                 
-                Button("Sign up") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                }
+            NavigationLink(destination: SignUpView()) {
+                Text("Sign up")
+            }
                 
-                Button("Forgot password") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
-                }
+            NavigationLink(destination: ResetPasswordView()) {
+                Text("Forgot password")
             }
             }
+        }
+    }
 }
 
 struct SignInView_Previews: PreviewProvider {

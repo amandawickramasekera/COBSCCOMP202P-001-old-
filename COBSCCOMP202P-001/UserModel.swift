@@ -8,6 +8,7 @@
 import Foundation
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
 import SwiftUI
 
 class UserModel : ObservableObject
@@ -19,7 +20,12 @@ class UserModel : ObservableObject
     @Published var mobile = ""
     @Published var email = ""
     @Published var password = ""
+    @Published var email_Signup = ""
+    @Published var password_Signup = ""
+    @Published var reEnterPassword = ""
     @Published var currLocation = ""
+    @Published var password_Reset_Email = ""
+    @Published var new_Mobile = ""
     
     @Published var alert = false
     @Published var alertMsg = ""
@@ -65,6 +71,54 @@ class UserModel : ObservableObject
     
     func signUp()
     {
+        if nic == "" || dob == Date() || gender == "" || name == "" || mobile == "" || email_Signup == "" || password_Signup == "" || reEnterPassword == "" || currLocation == ""
+        {
+            self.alertMsg = "Please fill all fields"
+            self.alert.toggle()
+            return
+        }
+        if password_Signup != reEnterPassword{
+            self.alertMsg = "Passwords don't match"
+            self.alert.toggle()
+            return
+        }
         
+        Auth.auth().createUser(withEmail: email_Signup, password: password_Signup) { (result, err) in
+            
+            if err != nil
+            {
+                self.alertMsg = err!.localizedDescription
+                self.alert.toggle()
+                return
+            }
+            
+            
+            
+            result?.user.sendEmailVerification(completion: { (err) in
+                
+                if err != nil{
+                    self.alertMsg = err!.localizedDescription
+                    self.alert.toggle()
+                    return
+                }
+                
+                self.alertMsg = "Verification email sent, please verify your email"
+                self.alert.toggle()
+                
+            })
+        }
     }
+    
+    func logout()
+    {
+        do{
+            try Auth.auth().signOut()
+            return()
+        }
+            catch{
+                self.alertMsg = "An exception occured, couldn't sign you out"
+                self.alert.toggle()
+        }
+    }
+    
 }

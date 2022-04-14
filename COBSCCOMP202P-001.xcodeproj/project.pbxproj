@@ -21,6 +21,9 @@
 		5F8B027D27FF094100C82138 /* SignedInHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8B027C27FF094100C82138 /* SignedInHomeView.swift */; };
 		5F8DF6BC27FF283100E4F58D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8DF6BB27FF283100E4F58D /* Launch Screen.storyboard */; };
 		5FA49CAF28071CEF0081E8D5 /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA49CAE28071CEF0081E8D5 /* AdModel.swift */; };
+		5FDFC0F9280843FF009C3A5F /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFC0F8280843FF009C3A5F /* ResetPasswordView.swift */; };
+		5FDFC0FB28087479009C3A5F /* ChangeMobileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFC0FA28087477009C3A5F /* ChangeMobileView.swift */; };
+		5FDFC0FD280875AB009C3A5F /* ChangeLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFC0FC280875AB009C3A5F /* ChangeLocationView.swift */; };
 		5FEAD9BA28016852006EDAB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FEAD9B928016852006EDAB7 /* GoogleService-Info.plist */; };
 		5FEAD9BD28017C68006EDAB7 /* SellerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAD9BC28017C68006EDAB7 /* SellerAdView.swift */; };
 		5FEAD9BF28017E1F006EDAB7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEAD9BE28017E1F006EDAB7 /* SettingsView.swift */; };
@@ -63,6 +66,9 @@
 		5F8B027C27FF094100C82138 /* SignedInHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInHomeView.swift; sourceTree = "<group>"; };
 		5F8DF6BB27FF283100E4F58D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		5FA49CAE28071CEF0081E8D5 /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
+		5FDFC0F8280843FF009C3A5F /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		5FDFC0FA28087477009C3A5F /* ChangeMobileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMobileView.swift; sourceTree = "<group>"; };
+		5FDFC0FC280875AB009C3A5F /* ChangeLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationView.swift; sourceTree = "<group>"; };
 		5FEAD9B928016852006EDAB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5FEAD9BC28017C68006EDAB7 /* SellerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerAdView.swift; sourceTree = "<group>"; };
 		5FEAD9BE28017E1F006EDAB7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -155,6 +161,9 @@
 				5FEAD9C028018E98006EDAB7 /* UserModel.swift */,
 				5FA49CAE28071CEF0081E8D5 /* AdModel.swift */,
 				5FEAD9BC28017C68006EDAB7 /* SellerAdView.swift */,
+				5FDFC0F8280843FF009C3A5F /* ResetPasswordView.swift */,
+				5FDFC0FA28087477009C3A5F /* ChangeMobileView.swift */,
+				5FDFC0FC280875AB009C3A5F /* ChangeLocationView.swift */,
 			);
 			path = "COBSCCOMP202P-001";
 			sourceTree = "<group>";
@@ -442,9 +451,12 @@
 				5FEAD9C128018E98006EDAB7 /* UserModel.swift in Sources */,
 				5F88FBD027B0FB570071C0CE /* ContentView.swift in Sources */,
 				5F8B027927FF08E500C82138 /* SignUpView.swift in Sources */,
+				5FDFC0FD280875AB009C3A5F /* ChangeLocationView.swift in Sources */,
 				5FA49CAF28071CEF0081E8D5 /* AdModel.swift in Sources */,
 				5F8B027D27FF094100C82138 /* SignedInHomeView.swift in Sources */,
+				5FDFC0F9280843FF009C3A5F /* ResetPasswordView.swift in Sources */,
 				5F8B027B27FF090300C82138 /* SignInView.swift in Sources */,
+				5FDFC0FB28087479009C3A5F /* ChangeMobileView.swift in Sources */,
 				5F88FBCE27B0FB570071C0CE /* COBSCCOMP202P_001App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
