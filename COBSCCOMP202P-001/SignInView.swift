@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SignInView: View {
     
@@ -21,7 +22,7 @@ struct SignInView: View {
                 SecureField("Password", text: $userModel.password)
                 
                 Button("Sign in") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    userModel.login()
     
                 }
             }

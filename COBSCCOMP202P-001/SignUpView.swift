@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct SignUpView: View {
     
@@ -50,7 +51,7 @@ struct SignUpView: View {
                 
                 
                 Button("Sign up") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    userModel.signUp()
                 }
             }
         }
