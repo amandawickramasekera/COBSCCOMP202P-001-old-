@@ -121,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				5F88FBCC27B0FB570071C0CE /* COBSCCOMP202P-001 */,
-				5FEAD9BC28017C68006EDAB7 /* SellerAdView.swift */,
 				5F88FBDD27B0FB910071C0CE /* COBSCCOMP202P-001Tests */,
 				5F88FBE727B0FB910071C0CE /* COBSCCOMP202P-001UITests */,
 				5F88FBCB27B0FB570071C0CE /* Products */,
@@ -155,6 +154,7 @@
 				5FEAD9BE28017E1F006EDAB7 /* SettingsView.swift */,
 				5FEAD9C028018E98006EDAB7 /* UserModel.swift */,
 				5FA49CAE28071CEF0081E8D5 /* AdModel.swift */,
+				5FEAD9BC28017C68006EDAB7 /* SellerAdView.swift */,
 			);
 			path = "COBSCCOMP202P-001";
 			sourceTree = "<group>";
