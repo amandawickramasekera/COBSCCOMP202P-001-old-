@@ -1,5 +1,5 @@
 # COBSCCOMP202P-001
 
 test user credentials:
-username - amandawickramasekera2000@gmail.com (it is not possible to use NIC as username in Firebase Auth, they allow email and some other social media logins and phone number login only)
+username - amandawickramasekera2000@gmail.com (Sir, I'm afraid although you have told us to use NIC as username, it is not possible to use NIC as username in Firebase Auth, they allow email and some other social media logins and phone number login only, so I had no choice but using email)
 password - abc123
