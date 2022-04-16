@@ -20,6 +20,7 @@
 		5F8B027B27FF090300C82138 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8B027A27FF090300C82138 /* SignInView.swift */; };
 		5F8B027D27FF094100C82138 /* SignedInHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8B027C27FF094100C82138 /* SignedInHomeView.swift */; };
 		5F8DF6BC27FF283100E4F58D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F8DF6BB27FF283100E4F58D /* Launch Screen.storyboard */; };
+		5F9E395A280953A50001CAC2 /* ChangeLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9E3959280953A50001CAC2 /* ChangeLocationViewModel.swift */; };
 		5FA49CAF28071CEF0081E8D5 /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FA49CAE28071CEF0081E8D5 /* AdModel.swift */; };
 		5FDFC0F9280843FF009C3A5F /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFC0F8280843FF009C3A5F /* ResetPasswordView.swift */; };
 		5FDFC0FB28087479009C3A5F /* ChangeMobileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FDFC0FA28087477009C3A5F /* ChangeMobileView.swift */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		1E94B588BB00926DD1D703FC /* Pods-COBSCCOMP202P-001-COBSCCOMP202P-001UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COBSCCOMP202P-001-COBSCCOMP202P-001UITests.release.xcconfig"; path = "Target Support Files/Pods-COBSCCOMP202P-001-COBSCCOMP202P-001UITests/Pods-COBSCCOMP202P-001-COBSCCOMP202P-001UITests.release.xcconfig"; sourceTree = "<group>"; };
 		2C64A5EF8BA432386002E7F8 /* Pods-COBSCCOMP202P-001Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-COBSCCOMP202P-001Tests.debug.xcconfig"; path = "Target Support Files/Pods-COBSCCOMP202P-001Tests/Pods-COBSCCOMP202P-001Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		5F82F83728089B3C007CF906 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5F88FBCA27B0FB570071C0CE /* NIBM Broker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NIBM Broker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F88FBCD27B0FB570071C0CE /* COBSCCOMP202P_001App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COBSCCOMP202P_001App.swift; sourceTree = "<group>"; };
 		5F88FBCF27B0FB570071C0CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		5F8B027A27FF090300C82138 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		5F8B027C27FF094100C82138 /* SignedInHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInHomeView.swift; sourceTree = "<group>"; };
 		5F8DF6BB27FF283100E4F58D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		5F9E3959280953A50001CAC2 /* ChangeLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeLocationViewModel.swift; sourceTree = "<group>"; };
 		5FA49CAE28071CEF0081E8D5 /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
 		5FDFC0F8280843FF009C3A5F /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		5FDFC0FA28087477009C3A5F /* ChangeMobileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeMobileView.swift; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 		5F88FBCC27B0FB570071C0CE /* COBSCCOMP202P-001 */ = {
 			isa = PBXGroup;
 			children = (
+				5F82F83728089B3C007CF906 /* Info.plist */,
 				5FEAD9B928016852006EDAB7 /* GoogleService-Info.plist */,
 				5F88FBCD27B0FB570071C0CE /* COBSCCOMP202P_001App.swift */,
 				5F88FBCF27B0FB570071C0CE /* ContentView.swift */,
@@ -164,6 +168,7 @@
 				5FDFC0F8280843FF009C3A5F /* ResetPasswordView.swift */,
 				5FDFC0FA28087477009C3A5F /* ChangeMobileView.swift */,
 				5FDFC0FC280875AB009C3A5F /* ChangeLocationView.swift */,
+				5F9E3959280953A50001CAC2 /* ChangeLocationViewModel.swift */,
 			);
 			path = "COBSCCOMP202P-001";
 			sourceTree = "<group>";
@@ -446,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9E395A280953A50001CAC2 /* ChangeLocationViewModel.swift in Sources */,
 				5FEAD9BF28017E1F006EDAB7 /* SettingsView.swift in Sources */,
 				5FEAD9BD28017C68006EDAB7 /* SellerAdView.swift in Sources */,
 				5FEAD9C128018E98006EDAB7 /* UserModel.swift in Sources */,
@@ -625,6 +631,8 @@
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "COBSCCOMP202P-001/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "to get geolocation of the properties";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -657,6 +665,8 @@
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "COBSCCOMP202P-001/Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "to get geolocation of the properties";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

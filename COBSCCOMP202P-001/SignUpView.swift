@@ -18,9 +18,7 @@ struct SignUpView: View {
 
     var body: some View {
         
-        NavigationView{
-        
-        ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top), content: {})/*.background(LinearGradient(gradient: init(colors:[Color("top"), Color("bottom")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all))*/.alert( isPresented: $userModel.alert, content: {
+            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top), content: {})/*.background(LinearGradient(gradient: init(colors:[Color("top"), Color("bottom")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all))*/.alert( isPresented: $userModel.alert, content: {
             Alert(title: Text("Message"), message: Text(userModel.alertMsg), dismissButton: .destructive(Text("Ok"), action: {
                 
                 if userModel.alertMsg == "Verification email sent, please verify your email"
@@ -37,7 +35,7 @@ struct SignUpView: View {
                 }
             }))
         })
-        
+        NavigationView{
         VStack{
             Text("Sign up")
             Form{
@@ -71,10 +69,15 @@ struct SignUpView: View {
                 TextField("Current location", text: $userModel.currLocation)
                 
                 
-                Button("Sign up") {
-                    userModel.signUp()
+                ZStack{
+                    Button(action: userModel.signUp){
+            
+                    NavigationLink(destination: SignInView()) {
+                        Text("Sign up")
+                    }
                 }
             }
+        }
         }
         }
     }

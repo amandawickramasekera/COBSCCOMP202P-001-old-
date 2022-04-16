@@ -17,24 +17,25 @@ struct SettingsView: View {
     
     var body: some View {
         NavigationView{
-        VStack{
-        Text("NIC")
-        Text("DOB")
-        Text("Gender")
-        Text("Name")
+            VStack{
+            Text(userModel.settings_nic)
+                Text(userModel.settings_dob)
+                Text(userModel.settings_gender)
+                Text(userModel.settings_name)
             HStack{
-                Text("Mobile")
-                NavigationLink(destination: ChangeMobileView()) {
+                Text(userModel.settings_mobile)
+                NavigationLink(destination: ChangeMobileView().navigationBarHidden(true)) {
                     Text("Change")
                 }
             }
-        Text("Email")
+                Text(userModel.settings_email)
+                
             NavigationLink(destination: ResetPasswordView()) {
                 Text("Change password")
             }
             
             HStack{
-        Text("Current location")
+                Text(userModel.settings_location)
                 NavigationLink(destination: ChangeLocationView()) {
                     Text("Change")
                 }
@@ -56,7 +57,7 @@ struct SettingsView: View {
                 }
             }
         }
-        }
+        }.onAppear(perform: userModel.getUserData)
     }
 }
 

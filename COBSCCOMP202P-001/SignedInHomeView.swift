@@ -9,23 +9,25 @@ import SwiftUI
 
 struct SignedInHomeView: View {
     
+    @State private var adModel = AdModel()
+    
     let category = ["Land", "House"]
-    @State private var selectedCategory = ""
+ 
     
     var body: some View {
         NavigationView{
         VStack{
             Form{
-                TextField("Min price", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Min price", text: $adModel.minPrice)
                 
-                TextField("Max price", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Max price", text: $adModel.minPrice)
                 
-                TextField("Radius from location", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                TextField("Radius from location", text: $adModel.radiusFromLocation)
                 
-                Picker(selection: $selectedCategory,
+                Picker(selection: $adModel.filter_category,
                     label:
                     HStack {
-                        TextField("Category",text: $selectedCategory)
+                    TextField("Category",text: $adModel.filter_category)
                     }
             )
                     {

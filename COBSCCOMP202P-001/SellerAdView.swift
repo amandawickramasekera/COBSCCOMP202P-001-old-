@@ -6,12 +6,74 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct SellerAdView: View {
+    
+    let category = ["Land", "House"]
+   
+    
+    let district = ["Kandy", "Matale", "Nuwara Eliya", "Ampara", "Batticaloa", "Trincomalee", "Anuradhapura", "Polonnaruwa", "Jaffna", "Kilinochchi", "Mannar", "Mullaitivu", "Vavuniya", "Kurunegala", "Puttalam", "Kegalle", "Ratnapura", "Galle", "Hambantota", "Matara", "Badulla", "Monaragala", "Colombo", "Gampaha", "Kalutara"]
+    
+    
+    
+    @State private var changeLocationVM = ChangeLocationViewModel()
+    @State private var userModel = UserModel()
+    @State private var adModel = AdModel()
+    
     var body: some View {
-        NavigationView
-        {
+        
+            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top), content: {})/*.background(LinearGradient(gradient: init(colors:[Color("top"), Color("bottom")]), startPoint: .top, endPoint: .bottom).ignoresSafeArea(.all, edges: .all))*/.alert( isPresented: $userModel.alert, content: {
+                Alert(title: Text("Message"), message: Text(changeLocationVM.alertMsg), dismissButton: .destructive(Text("Ok"), action: {
+                }))
+            })
+        NavigationView{
             VStack{
+                if #available(iOS 14.0, *) {
+                    Map(coordinateRegion: $changeLocationVM.region).accentColor(Color(.systemPink)).onAppear{
+                        changeLocationVM.checkIfLocationEnabled()
+                    }
+                } else {
+                    TextField("Geo Location", text: $adModel.geo_Location)
+                }
+                
+                Button("Select images to upload") {
+                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                }
+                
+                TextField("Price", text: $adModel.price)
+                
+                Picker(selection: $adModel.category,
+                    label:
+                    HStack {
+                    TextField("Category",text: $adModel.category)
+                    }
+            )
+                    {
+                        ForEach(category, id: \.self) { category in
+                            Text(category).tag(category)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+                
+                
+                TextField("Land size", text: $adModel.price)
+                
+                Picker(selection: $adModel.district,
+                    label:
+                    HStack {
+                    TextField("District",text: $adModel.district)
+                    }
+            )
+                    {
+                        ForEach(district, id: \.self) { district in
+                            Text(district).tag(district)
+                        }
+                    }
+                    .pickerStyle(WheelPickerStyle())
+               
+            
+                TextField("Town/village", text: $adModel.town_village)
                 
             }
         }

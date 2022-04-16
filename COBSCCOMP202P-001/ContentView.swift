@@ -30,7 +30,9 @@ struct ContentView: View {
                 .pickerStyle(WheelPickerStyle())
            
             List {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Content@*/Text("Content")/*@END_MENU_TOKEN@*/
+                NavigationLink(destination: SignInView().navigationBarHidden(true)) {
+                Text("Sign in to view entire ad")
+            }
             }
         }
         }

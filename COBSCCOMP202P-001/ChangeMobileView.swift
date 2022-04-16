@@ -18,7 +18,7 @@ struct ChangeMobileView: View {
                     TextField("New mobile number", text: $userModel.new_Mobile)
                     
                     Button("Update") {
-                        /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                        userModel.saveNewMobile()
                     }
                 }
             }

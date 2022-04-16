@@ -30,16 +30,15 @@ struct SignInView: View {
                 }))
             })
         NavigationView{
-        VStack{
+            VStack{
             Text("Sign in")
-            Form{
+                Form{
                 TextField("Username", text: $userModel.email).autocapitalization(.none)
                 
                 SecureField("Password", text: $userModel.password).autocapitalization(.none)
-                
-                ZStack{
-                    NavigationLink(destination: SignedInHomeView().navigationBarHidden(true), isActive: $isActive) {
-                        Button("Sign in") {
+            
+                    ZStack{
+                        Button("Login") {
                             attemptingLogin = true
                             userModel.login()
                             if Auth.auth().currentUser != nil
@@ -50,10 +49,13 @@ struct SignInView: View {
                                 self.attemptingLogin = false
                             }
                         }
+                        NavigationLink(destination: SignedInHomeView().navigationBarHidden(true), isActive: $isActive) {
+                            
                     }
-                }
-            }
+                    }
             
+                }
+        
             NavigationLink(destination: Text("Terms & Policy")) {
                 Text("Terms & Policy")
             }
@@ -65,7 +67,10 @@ struct SignInView: View {
             NavigationLink(destination: ResetPasswordView()) {
                 Text("Forgot password")
             }
-            }
+            
+                
+        }
+        
         }
     }
 }

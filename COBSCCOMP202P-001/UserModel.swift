@@ -26,11 +26,21 @@ class UserModel : ObservableObject
     @Published var currLocation = ""
     @Published var password_Reset_Email = ""
     @Published var new_Mobile = ""
+    @Published var new_Location = ""
+    @Published var stringDOB = ""
+    
+    var settings_nic = ""
+    var settings_dob = ""
+    var settings_gender = ""
+    var settings_name = ""
+    var settings_mobile = ""
+    var settings_email = ""
+    var settings_location = ""
     
     @Published var alert = false
     @Published var alertMsg = ""
     
-    //@AppStorage("log_Status") var status = false
+    let ref = Database.database().reference().child("Users")
     
     func login()
     {
@@ -40,7 +50,8 @@ class UserModel : ObservableObject
             self.alert.toggle()
             return
         }
-        Auth.auth().signIn(withEmail: email, password: password){ (_: AuthDataResult?, err) in
+
+        Auth.auth().signIn(withEmail: email, password: password){ (result, err) in
             
             if err != nil
             {
@@ -65,12 +76,14 @@ class UserModel : ObservableObject
                     return
                 }
             }
-           // self.status = true
+  
         }
     }
     
     func signUp()
     {
+        
+        
         if nic == "" || dob == Date() || gender == "" || name == "" || mobile == "" || email_Signup == "" || password_Signup == "" || reEnterPassword == "" || currLocation == ""
         {
             self.alertMsg = "Please fill all fields"
@@ -91,8 +104,18 @@ class UserModel : ObservableObject
                 self.alert.toggle()
                 return
             }
-            
-            
+            let user = Auth.auth().currentUser
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy"
+            self.stringDOB = dateFormatter.string(from: self.dob)
+            self.ref.child(user!.uid).child("userId").setValue(user!.uid)
+            self.ref.child(user!.uid).child("nic").setValue(self.nic)
+            self.ref.child(user!.uid).child("dob").setValue(self.stringDOB)
+            self.ref.child(user!.uid).child("gender").setValue(self.gender)
+            self.ref.child(user!.uid).child("name").setValue(self.name)
+            self.ref.child(user!.uid).child("mobile").setValue(self.mobile)
+            self.ref.child(user!.uid).child("email").setValue(self.email)
+            self.ref.child(user!.uid).child("currentLocation").setValue(self.currLocation)
             
             result?.user.sendEmailVerification(completion: { (err) in
                 
@@ -120,5 +143,108 @@ class UserModel : ObservableObject
                 self.alert.toggle()
         }
     }
+
+    func resetPassword()
+    {
+        if password_Reset_Email == ""
+        {
+            self.alertMsg = "Please enter your email"
+            self.alert.toggle()
+        }
+        else{
+        Auth.auth().sendPasswordReset(withEmail: password_Reset_Email) { err in
+            if err != nil{
+                self.alertMsg = "An error occured"
+                self.alert.toggle()
+                
+            }
+            else{
+                self.alertMsg = "Password reset email sent successfully"
+                self.alert.toggle()
+            }
+        }
+    }
+    }
     
+    func getUserData()
+    {
+        if let user = Auth.auth().currentUser
+        {
+            self.ref.child(user.uid).child("nic").observe(.value) { nic in
+                
+                self.settings_nic = nic.value as! String
+                    
+            } withCancel: { err in
+                
+                self.logout()
+            }
+            
+            self.ref.child(user.uid).child("dob").observe(.value) { dob in
+                
+                self.settings_dob = dob.value as! String
+                    
+            } withCancel: { err in
+                self.logout()
+            }
+            
+            self.ref.child(user.uid).child("gender").observe(.value) { gender in
+                
+                self.settings_gender = gender.value as! String
+                    
+            } withCancel: { err in
+                self.logout()
+            }
+            
+            self.ref.child(user.uid).child("name").observe(.value) { name in
+                
+                self.settings_name = name.value as! String
+                    
+            } withCancel: { err in
+                self.logout()
+            }
+
+            
+            self.ref.child(user.uid).child("mobile").observe(.value) { mobile in
+                
+                self.settings_mobile = mobile.value as! String
+                    
+            } withCancel: { err in
+                self.logout()
+            }
+            
+            
+            self.ref.child(user.uid).child("email").observe(.value) { email in
+                
+                self.settings_email = email.value as! String
+                    
+            } withCancel: { err in
+                self.logout()
+            }
+            
+            
+            self.ref.child(user.uid).child("currentLocation").observe(.value) { currLocation in
+                
+                self.settings_location = currLocation.value as! String
+                    
+            } withCancel: { err in
+                self.logout()
+            }
+        }
+        
+        
+        
+    }
+    
+    func saveNewMobile()
+    {
+        if let user = Auth.auth().currentUser
+        {
+            self.ref.child(user.uid).child("mobile").setValue(self.new_Mobile)
+        }
+    }
+    
+    func saveNewLocation()
+    {
+        
+    }
 }

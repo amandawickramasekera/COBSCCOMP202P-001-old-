@@ -25,7 +25,7 @@ struct COBSCCOMP202P_001App: App {
                 SignedInHomeView()
             }
             else{
-                SignInView()
+                ContentView()
             }
         }
     }
