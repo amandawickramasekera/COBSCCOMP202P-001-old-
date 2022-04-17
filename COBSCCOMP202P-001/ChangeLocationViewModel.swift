@@ -50,6 +50,9 @@ final class ChangeLocationViewModel: NSObject, ObservableObject, CLLocationManag
         case .authorizedAlways, .authorizedWhenInUse:
                 
                 region = MKCoordinateRegion(center: locationManager.location!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
+                
+               /*region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 6.9271, longitude: 79.8612), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))*/
+                
             
         @unknown default:
             break

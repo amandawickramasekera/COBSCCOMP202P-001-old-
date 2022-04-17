@@ -20,12 +20,12 @@ struct COBSCCOMP202P_001App: App {
     var body: some Scene {
         WindowGroup {
         
-            if Auth.auth().currentUser != nil
+            if Auth.auth().currentUser == nil
             {
-                SignedInHomeView()
+                ContentView()
             }
             else{
-                ContentView()
+                SignedInHomeView()
             }
         }
     }

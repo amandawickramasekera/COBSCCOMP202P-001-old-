@@ -66,7 +66,7 @@ struct SignUpView: View {
                 
                 SecureField("Retype password", text: $userModel.reEnterPassword).autocapitalization(.none)
                 
-                TextField("Current location", text: $userModel.currLocation)
+                TextField("Current location", text: $userModel.currLocation).disableAutocorrection(true)
                 
                 
                 ZStack{

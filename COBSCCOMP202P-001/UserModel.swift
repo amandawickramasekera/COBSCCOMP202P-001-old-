@@ -40,7 +40,7 @@ class UserModel : ObservableObject
     @Published var alert = false
     @Published var alertMsg = ""
     
-    let ref = Database.database().reference().child("Users")
+    let ref = Database.database().reference().child("NIBM Broker").child("Users")
     
     func login()
     {
@@ -82,8 +82,6 @@ class UserModel : ObservableObject
     
     func signUp()
     {
-        
-        
         if nic == "" || dob == Date() || gender == "" || name == "" || mobile == "" || email_Signup == "" || password_Signup == "" || reEnterPassword == "" || currLocation == ""
         {
             self.alertMsg = "Please fill all fields"
@@ -114,7 +112,7 @@ class UserModel : ObservableObject
             self.ref.child(user!.uid).child("gender").setValue(self.gender)
             self.ref.child(user!.uid).child("name").setValue(self.name)
             self.ref.child(user!.uid).child("mobile").setValue(self.mobile)
-            self.ref.child(user!.uid).child("email").setValue(self.email)
+            self.ref.child(user!.uid).child("email").setValue(self.email_Signup)
             self.ref.child(user!.uid).child("currentLocation").setValue(self.currLocation)
             
             result?.user.sendEmailVerification(completion: { (err) in
@@ -168,6 +166,7 @@ class UserModel : ObservableObject
     
     func getUserData()
     {
+        
         if let user = Auth.auth().currentUser
         {
             self.ref.child(user.uid).child("nic").observe(.value) { nic in
@@ -229,9 +228,13 @@ class UserModel : ObservableObject
             } withCancel: { err in
                 self.logout()
             }
+            
+            
         }
         
-        
+        else{
+            self.logout()
+        }
         
     }
     
@@ -245,6 +248,16 @@ class UserModel : ObservableObject
     
     func saveNewLocation()
     {
-        
+        if let user = Auth.auth().currentUser
+        {
+        if new_Location == ""
+        {
+            self.alertMsg = "Location is null"
+            self.alert.toggle()
+        }
+        else{
+            self.ref.child(user.uid).child("currentLocation").setValue(self.new_Location)
+        }
+        }
     }
 }
