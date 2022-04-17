@@ -39,7 +39,7 @@ struct SignedInHomeView: View {
             
             
                 Button("Filter Ads") {
-                    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+                    adModel.filterAds()
                 }
             }
                 
